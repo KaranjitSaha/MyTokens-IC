@@ -1,4 +1,4 @@
-# This project will work only if it is hosted live on the IC network for which we need cycles. Hence this code is just for reference and not for running. We can run it locally if we remove the authentication part though (which doesn't require any cycles).
+# This project will work locally only.
 
 # Check your Balance
 

@@ -11,18 +11,18 @@ function Transfer() {
   const[feedback,setFeedback]=useState("");
 
   async function handleClick() {
-    const authClient = await AuthClient.create();
+    /* const authClient = await AuthClient.create();
     const identity = await authClient.getIdentity();
 
     const authenticatedCanister = createActor(canisterId,{
       agentOptions:{
         identity,
       },
-    }); 
+    });  */
     setIsDisabled(true);
     setIsHidden(false);
     const recipient = Principal.fromText(recipientId);
-    var status= await authenticatedCanister.transfer(recipient,Number(amount));
+    var status= await token.transfer(recipient,Number(amount));
     setIsDisabled(false);
     setFeedback(status);
   }

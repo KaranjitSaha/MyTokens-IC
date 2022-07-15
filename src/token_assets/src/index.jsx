@@ -5,7 +5,7 @@ import { AuthClient } from '@dfinity/auth-client';
 
 
 const init = async () => { 
-  const authClient= await AuthClient.create();
+  /* const authClient= await AuthClient.create();
 
   if(authClient.isAuthenticated){
     handleAuthenticated(authClient);
@@ -24,8 +24,10 @@ async function handleAuthenticated(authClient){
   const userPrincipal = identity._principal.toString();
   console.log(userPrincipal);
 
-  ReactDOM.render(<App loggedInPricipal={userPrincipal} />, document.getElementById("root"));
-}
+  ReactDOM.render(<App loggedInPricipal={userPrincipal} />, document.getElementById("root"));*/
+  ReactDOM.render(<App />, document.getElementById("root"));
+} 
+
 
 init();
 

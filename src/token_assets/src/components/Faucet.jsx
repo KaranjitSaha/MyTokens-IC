@@ -3,22 +3,22 @@ import {token,canisterId,createActor} from '../../../declarations/token';
 import { AuthClient } from '@dfinity/auth-client';
 
 
-function Faucet(props) {
+function Faucet() {
   const [textShown,setTextShown]=useState("Gimme Gimme");
   const [isDisabled,setIsDisabled]=useState(false);
 
 
   async function handleClick(event) {
     setIsDisabled(true);
-    const authClient = await AuthClient.create();
+    /* const authClient = await AuthClient.create();
     const identity = await authClient.getIdentity();
 
     const authenticatedCanister = createActor(canisterId,{
       agentOptions:{
         identity,
       },
-    }); 
-    setTextShown( await authenticatedCanister.payOut() );
+    });  */
+    setTextShown( await token.payOut() );
     // isDisabled=false;
   }
 
@@ -30,7 +30,7 @@ function Faucet(props) {
         </span>
         Faucet
       </h2>
-      <label>Get your free DK tokens here! Claim 10,000 DK coins to {props.loggedInPricipal}.</label>
+      <label>Get your free DK tokens here! Claim 10,000 DK coins to your account.</label>
       <p className="trade-buttons">
         <button id="btn-payout" 
         onClick={handleClick}
